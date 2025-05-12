@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Teclado - Colores</title>
+  <style>
+    #key {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border: 1px solid black;
+      margin-bottom: 10px;
+    }
+    .color-box {
+      width: 200px;
+      height: 200px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Presiona las teclas: a, s, d, q, w, e</h2>
+  <div id="key"></div>
+
+  <script>
+    let colorGlobal = '';
+
+    document.addEventListener('keydown', function(event) {
+      const keyDiv = document.getElementById('key');
+
+      if (event.key === 'a') {
+        colorGlobal = 'pink';
+        keyDiv.style.backgroundColor = colorGlobal;
+      } else if (event.key === 's') {
+        colorGlobal = 'orange';
+        keyDiv.style.backgroundColor = colorGlobal;
+      } else if (event.key === 'd') {
+        colorGlobal = 'skyblue';
+        keyDiv.style.backgroundColor = colorGlobal;
+      } else if (event.key === 'q') {
+        crearDiv('purple');
+      } else if (event.key === 'w') {
+        crearDiv('gray');
+      } else if (event.key === 'e') {
+        crearDiv('brown');
+      }
+    });
+
+    function crearDiv(color) {
+      const nuevoDiv = document.createElement('div');
+      nuevoDiv.className = 'color-box';
+      nuevoDiv.style.backgroundColor = color;
+      document.body.appendChild(nuevoDiv);
+    }
+  </script>
+
+</body>
+</html>
